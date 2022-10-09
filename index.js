@@ -1,8 +1,14 @@
-const express = require('express')
-const app = express()
+const express = require("express");
+const articleRouter = require('./routes/articles')
+const app = express();
 
-app.get('/', (req, res) => {
-    res.send('Hello World')
-})
 
-app.listen(5000)
+app.set("view engine", "ejs");
+
+app.use('/articles', articleRouter)
+
+app.get("/", (req, res) => {
+  res.render('index2');
+});
+
+app.listen(5000);
