@@ -16,7 +16,12 @@
 
         <% Object.keys(articles).forEach(article => { %>
             <div class="card mt-4">
-                <%= article.title %>
+                <div class = "card-body">
+                    <h4 class = "class-title"> <%= article.title %></h4>
+                    <div class="card-subtitle text-muted mb-2">
+                        <%= article.createdAt %>
+                    </div>
+                </div>
             </div>
             <% }); %>
     </div>
